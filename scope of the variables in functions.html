@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>A function can access variables defined inside the function:</p>
+<button onclick="myFunction()">Click Me!</button>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+var b = 5;
+
+function myFunction() {
+  var a = 4;
+  // This works because 'b' is a global variable and 'a' is a local variable inside this function
+  document.getElementById("demo").innerHTML = b * a; 
+  
+  // To display 'a', it must be accessed inside the function where it is defined
+  document.getElementById("demo1").innerHTML = "Value of local variable a: " + a;
+}
+
+// This works because 'b' is globally scoped
+document.getElementById("demo2").innerHTML = "Value of global variable b: " + b;
+</script>
+
+</body>
+</html>
